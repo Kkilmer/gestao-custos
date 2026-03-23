@@ -32,6 +32,7 @@ public class GestaoDespesaController {
         try {
             var result= catastroDespesaService.execute(despesa);
             return ResponseEntity.ok(result);
+
         }catch (IllegalArgumentException e){
             var errorMessage = new ErrorMessage(e.getMessage(),"INVALID_PARAMS");
             return ResponseEntity.status(400).body(errorMessage);
