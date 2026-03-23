@@ -22,7 +22,7 @@ public class GestaoDespesaController {
     CatastroDespesaUseCase catastroDespesaUseCase;
 
     @PostMapping("/create")
-    public void create(@RequestBody Despesa despesa) {
-        catastroDespesaUseCase.execute(despesa);
+    public Despesa create(@RequestBody Despesa despesa) {
+        return catastroDespesaUseCase.execute(despesa);
     }
 }
